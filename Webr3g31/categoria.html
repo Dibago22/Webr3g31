@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adm Fincas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+</head>
+<body>
+    <div class="container">
+        <div id="nuevo">
+            <h2>Nueva Categoría</h2>
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" class="form-control" id="name" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+                <label for="description">Descripción</label>
+                <input type="text" class="form-control" id="description" placeholder="Descripción">
+            </div>
+            <br><br>
+            <button class="btn btn-primary" id="nuevoGuardar" onclick="guardarNuevo()">Guardar</button>
+            <button class="btn btn btn-secondary" id="nuevoCancelar" onclick="inicial()">Cancelar</button>
+        </div>
+
+        <div id="modificar">
+            <h2>Datos de la Categoría</h2>
+            <div class="form-group">
+                <label id="idLabel" for="idModif"></label>
+                <input type="hidden" class="form-control" id="idModif" placeholder="Id">
+            </div>
+            <div class="form-group">
+                <label for="nameModif">Nombre</label>
+                <input type="text" class="form-control" id="nameModif" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+                <label for="descriptionModif">Descripción</label>
+                <input type="text" class="form-control" id="descriptionModif" placeholder="Descripción">
+            </div>
+            <br><br>
+            <button id="nuevoGuardar" class="btn btn-primary" onclick="guardarEditar()" disabled>Guardar</button>
+            <button id="nuevoCancelar" class="btn btn-secondary" onclick="inicial()">Cancelar</button>
+        </div>
+
+        <div id="borrar">
+            <h2>Desea borrar la información de la Categoría:</h2>
+            <input id="idDelete" type="hidden">
+            <ol class="list-group list-group-numbered">
+                <li id="idList" class="list-group-item"></li>
+                <li id="nameList" class="list-group-item"></li>
+                <li id="descriptionList" class="list-group-item"></li>
+            </ol>
+            <br><br>
+            <button id="borrarGuardar" class="btn btn-primary" onclick="guardarBorrar()" disabled>Eliminar</button>
+            <button id="borrarCancelar" class="btn btn-secondary" onclick="inicial()">Cancelar</button>
+        </div>
+
+        <div id="datos">
+            <h1>Listado de Categorías</h1>
+            <button type="button" class="btn btn-link">
+                <a href="index.html">
+                    <img src="img/back.png" class="img-fluid" alt="Regresar">
+                </a>
+            </button>
+            <button class="btn btn-primary" onclick="agregar()">Agregar Categoría</button>
+            <br>
+            <br>
+            <table border="1" class="table table-striped table-responsive-md" id="tabla">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Categoría</th>
+                        <th>Descripción</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="registros">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/js/categoria.js">
+    </script>
+
+</body>
+
+</html>
